@@ -1,5 +1,7 @@
 package vehicle;
 
+import java.util.List;
+
 abstract class Car {
     private String make;
     private String model;
@@ -30,7 +32,7 @@ abstract class Car {
     public abstract void drive(double miles);
 
     public String toString(){
-        return "<" + make + " and " + model + ">" + " (<" + mileage + "> mi)";
+        return "<" + this.make + " and " + this.model + ">" + " (<" + this.mileage + "> mi)";
     }
 
     public double getMileage(){
@@ -57,15 +59,16 @@ abstract class Car {
 
     public int roadTrip(List<Double> milesEachDay){
         int sum = 0;
-        for (int i = 0; i < milesEachDay.length; i++){
-            if (milesEachDay[i] < 0){
+        for (int i = 0; i < milesEachDay.size(); i++){
+            if (milesEachDay.get(i) < 0){
                 throw new IllegalArgumentException();
             }
-            sum += milesEachDay[i];
+            sum += milesEachDay.get(i);
             if (sum > getRemainingRange()){
                 return i;
             }
         }
+        return milesEachDay.size();
     }
 
 }

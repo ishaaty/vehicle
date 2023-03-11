@@ -1,7 +1,7 @@
 package vehicle;
 
 class HondaAccordian extends GasPoweredCar {
-    public HondaAccordian(double startingMileage, int modelYera){
+    public HondaAccordian(double startingMileage, int modelYear){
 
     }   
 
