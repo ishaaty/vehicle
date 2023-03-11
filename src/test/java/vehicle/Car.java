@@ -7,7 +7,6 @@ abstract class Car {
     private String model;
     private double mileage;
 
-
     public Car(String make, String model, double startingMileage){
         this.make = make;
         this.model = model;
